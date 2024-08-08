@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile_style.css" />
+  </head>
+  <body>
+    <div class="profile-container">
+      <header>
+        <nav class="navbar">
+          <div class="navbar-left">
+            <img
+              src="profile-icon.png"
+              alt="Profile"
+              class="profile-icon"
+              onclick="navigateToProfile()"
+            />
+          </div>
+          <div class="navbar-right">
+            <button class="logout-button" onclick="logout()">Logout</button>
+          </div>
+        </nav>
+        <h1>User Profile</h1>
+      </header>
+
+      <div class="profile-content">
+        <div class="profile-card">
+          <div class="profile-header">
+            <img src="user-avatar.png" alt="User Avatar" class="user-avatar" />
+            <h2 id="username">John Doe</h2>
+            <p id="email">johndoe@example.com</p>
+          </div>
+          <div class="profile-body">
+            <h3>About Me</h3>
+            <p id="bio">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+
+            <h3>My Events</h3>
+            <ul id="eventsList">
+              <!-- Events will be populated here -->
+            </ul>
+
+            <button class="edit-button" onclick="editProfile()">
+              Edit Profile
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="profile.js"></script>
+  </body>
+</html>

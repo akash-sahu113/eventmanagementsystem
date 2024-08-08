@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Management Dashboard</title>
+    <link rel="stylesheet" href="dash_style.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <header>
+        <nav class="navbar">
+          <div class="navbar-left">
+            <img
+              src="profile-icon.png"
+              alt="Profile"
+              class="profile-icon"
+              onclick="navigateToProfile()"
+            />
+          </div>
+          <div class="navbar-right">
+            <button class="logout-button" onclick="logout()">Logout</button>
+          </div>
+        </nav>
+        <h1>Event Management Dashboard</h1>
+      </header>
+
+      <div class="event-form-container">
+        <h2>Create New Event</h2>
+        <form id="eventForm">
+          <input type="text" id="title" placeholder="Event Title" required />
+          <textarea
+            id="description"
+            placeholder="Event Description"
+            required
+          ></textarea>
+          <input type="datetime-local" id="event_date" required />
+          <input type="text" id="location" placeholder="Location" required />
+          <button type="submit">Create Event</button>
+        </form>
+      </div>
+
+      <div class="events-list-container">
+        <h2>Your Events</h2>
+        <div id="eventsList"></div>
+      </div>
+
+      <div id="editEventForm" class="edit-event-form">
+        <h2>Edit Event</h2>
+        <form>
+          <input type="hidden" id="editEventId" />
+          <input
+            type="text"
+            id="editTitle"
+            placeholder="Event Title"
+            required
+          />
+          <textarea
+            id="editDescription"
+            placeholder="Event Description"
+            required
+          ></textarea>
+          <input type="datetime-local" id="editEventDate" required />
+          <input
+            type="text"
+            id="editLocation"
+            placeholder="Location"
+            required
+          />
+          <button type="button" id="saveEditButton">Save</button>
+          <button type="button" class="cancel-button" onclick="cancelEdit()">
+            Cancel
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="event-script.js"></script>
+  </body>
+</html>
